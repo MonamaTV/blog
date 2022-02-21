@@ -26,7 +26,7 @@ const Header = () => {
                 <button 
                     className={styles.closeMenu}
                     onClick={clickMenu}
-                ><img src="./close.png" />Close
+                ><img src="./closing.png" />
                 </button>
                 <ul className={styles.nav}>
                     <li><a href="#about">About</a></li>

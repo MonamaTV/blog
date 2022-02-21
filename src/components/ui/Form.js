@@ -7,7 +7,7 @@ const Form = () => {
 
     return (
         <form className={styles.contact__form}>
-            <h2>Send Message</h2>
+            <h2>Send Message...</h2>
             <div className={styles.input__group}>
                 <Label text="Fullname" />
                 <TextField />

@@ -4,7 +4,7 @@ import styles from './Blog.module.css';
 const Blog = () => {
 
     return (
-        <div className="opp-container">
+        <div className="opp-container" id="blog">
             <div className="heading-title">
                 <h1><span>B</span>LOG</h1>
                 {/* <p>My latest blogs to enjoy</p> */}

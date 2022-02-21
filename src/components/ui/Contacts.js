@@ -4,7 +4,7 @@ import styles from './Contacts.module.css';
 const Contacts = () => {
 
     return (
-        <div className="contacts-container">
+        <div className="contacts-container" id="contacts">
             <div className={styles.mediums}>
                 <h2>Get In Touch</h2>
                 <p>It is easy to connect with me. Do not hesitate to reach out to me if you have any query or just want to have a conversation</p>

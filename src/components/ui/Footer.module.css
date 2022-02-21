@@ -1,0 +1,18 @@
+.foot ul {
+  list-style: none;
+}
+.foot ul li {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+.foot ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}

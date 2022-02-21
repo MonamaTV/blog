@@ -1,16 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Nunito:wght@200;400;500;700;800&family=Poppins:wght@100;300;400;500;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.container {
+  background-color: #171a33;
+  margin-left: 130px;
+  padding: 10px;
+  height: 100vh;
+  margin-top: 100px;
+}
+.opp-container {
+  margin-left: 130px;
+  padding: 50px 10px;
+  background-color: #007d59;
+  margin-top: 0;
+}
+.contacts-container {
+  margin-left: 130px;
+  padding: 0px 0px;
+  background-color: #fff;
+  margin-top: 0;
+  display: flex;
 }
 
-* {
-  box-sizing: border-box;
+.footer-container {
+  margin-left: 130px;
+  padding: 50px 10px;
+  background-color: #fff;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.footer-container > div {
+  flex: 30%;
+  padding: 10px 30px;
+}
+
+.heading-title {
+  font-size: 50px;
+  color: #fff;
+  position: relative;
+  left: -77px;
+}
+
+.heading-title span {
+  color: #171a33;
+}
+/* */
+.opp-container .heading-title {
+  font-size: 50px;
+  color: #fff;
+  position: relative;
+  left: -77px;
+}
+
+.opp-container .heading-title span {
+  color: #007d59;
+}
+.contacts-container .heading-title {
+  font-size: 50px;
+  color: #fff;
+  position: relative;
+  left: -77px;
+}
+
+.contacts-container .heading-title span {
+  color: #86888a;
+}
+
+@media only screen and (max-width: 600px) {
+  .mediums {
+    width: 100%;
+  }
+  .contacts-container {
+    display: block;
+  }
+  .container,
+  .contacts-container,
+  .opp-container,
+  .footer-container {
+    margin-left: 0;
+  }
+  .heading-title {
+    display: none;
+  }
+  .opp-container .heading-title {
+    left: 0;
+    color: #fff;
+    display: block;
+    font-size: 30px;
+  }
+  .opp-container .heading-title span {
+    color: #fff;
+  }
+  .footer-container {
+    display: block;
+  }
 }

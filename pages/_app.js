@@ -1,7 +1,14 @@
+import MainLayout from '../src/layouts/MainLayout';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <MainLayout>
+      <Component {...pageProps} />
+    </MainLayout>
+  );
+
+  
 }
 
 export default MyApp

@@ -4,7 +4,7 @@ const BlogContent = () => {
     return (
         <a href="#" className={styles.content}>
             <div className={styles.img}>
-                <img src="./js.png" alt="" />
+                <img src="./server.png" alt="" />
             </div>
             <div className={styles.blog__title}>
                 <h2>JavaScript In A Few</h2>

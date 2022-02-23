@@ -112,3 +112,88 @@ body {
     display: block;
   }
 }
+/* THe blog */
+.enjoy {
+  padding: 10px;
+  color: #abb2be;
+  font-size: 40px;
+}
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog > a {
+  flex: 45%;
+  color: #fff;
+  padding-right: 90px;
+  font-weight: 100;
+}
+
+.blog a img {
+  width: 100px;
+}
+.click {
+  margin: 20px 0px;
+}
+.click a {
+  background-color: #171a33;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* The blog */
+
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 50%;
+}
+.search-button,
+.search-input {
+  margin-top: 40px;
+  padding: 13px;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+}
+
+.search-button {
+  background-color: #2657d7;
+  color: #fff;
+}
+
+.next-button,
+.prev-button {
+  background-color: #2657d7;
+  border: 0;
+  color: #fff;
+  padding: 5px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: auto;
+  }
+  .search-button,
+  .search-input,
+  .enjoy {
+    margin: 0;
+    margin-top: 30px;
+  }
+  .enjoy {
+    display: none;
+  }
+  .search-input {
+    width: 65%;
+  }
+  .blog a {
+    padding-right: 0;
+    margin: 20px 0;
+  }
+}

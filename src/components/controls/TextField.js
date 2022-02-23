@@ -1,5 +1,5 @@
 
-const TextField = ({type = "text", value, handleChange, styles, readOnly = false}) => {
+const TextField = ({type = "text", value, handleChange, styles, readOnly = false, holder = ""}) => {
 
     return (
         <input
@@ -8,6 +8,7 @@ const TextField = ({type = "text", value, handleChange, styles, readOnly = false
             onChange={handleChange}
             className={styles}
             readOnly={readOnly}
+            placeholder={holder}
         />
     )
 };

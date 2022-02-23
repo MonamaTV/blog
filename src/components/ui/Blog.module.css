@@ -6,6 +6,9 @@
 .blog > a {
   flex: 45%;
 }
+.blog a img {
+  width: 100px;
+}
 .click {
   margin: 20px 0px;
 }

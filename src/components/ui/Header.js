@@ -1,5 +1,6 @@
 import styles from './Header.module.css';
 import { useLayoutEffect, useState } from 'react';
+import Link from 'next/link';
 const Header = () => {
 
 
@@ -13,7 +14,9 @@ const Header = () => {
     return (
         <header className={styles.head}>
             <div className={styles.logo}>
-                <h2><a href="/">TadV</a></h2>
+                <Link href="/">
+                    <a >TadV</a>
+                </Link>
             </div>
             <button 
                 className={styles.menu}
@@ -31,7 +34,9 @@ const Header = () => {
                 <ul className={styles.nav}>
                     <li><a href="#about">About</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="/blog">Blog</a></li>
+                    <li><Link href="/blog">
+                        <a >Blog</a>
+                    </Link></li>
                     <li><a href="#contacts">Contacts</a></li>
                     <li className={styles.icons}>
                         <a rel="noreferrer" target="_blank" href="https://github.com/MonamaTV"><img src="./hub.png"/></a>

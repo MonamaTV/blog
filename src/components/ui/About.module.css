@@ -10,6 +10,7 @@
 }
 .img img {
   height: 100%;
+  width: 400px;
   border-radius: 10px;
 }
 
@@ -44,4 +45,35 @@
 }
 .links {
   margin: 20px 0;
+}
+
+@media screen and (max-width: 950px) {
+  .img img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutContent {
+    padding-top: 10px;
+  }
+  .homeContent {
+    flex-direction: column-reverse;
+    height: initial;
+  }
+  .img img {
+    margin: 20px 0;
+    display: block;
+    height: 100%;
+    width: 70%;
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .links * {
+    display: block;
+  }
+  .img {
+    display: none;
+  }
 }

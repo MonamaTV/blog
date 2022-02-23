@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <header className={styles.head}>
             <div className={styles.logo}>
-                <h2>TadV</h2>
+                <h2><a href="/">TadV</a></h2>
             </div>
             <button 
                 className={styles.menu}
@@ -31,12 +31,12 @@ const Header = () => {
                 <ul className={styles.nav}>
                     <li><a href="#about">About</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="/blog">Blog</a></li>
                     <li><a href="#contacts">Contacts</a></li>
                     <li className={styles.icons}>
-                        <a href="#"><img src="./hub.png"/></a>
-                        <a href="#"><img src="./tube.png"/></a>
-                        <a href="#"><img src="./twitter.png"/></a>
+                        <a rel="noreferrer" target="_blank" href="https://github.com/MonamaTV"><img src="./hub.png"/></a>
+                        <a rel="noreferrer" target="_blank" href="https://www.youtube.com/channel/UCTVZlugMB9J90GIOzVJzu6A"><img src="./tube.png"/></a>
+                        <a rel="noreferrer" target="_blank" href="https://twitter.com/Monama_Vee"><img src="./twitter.png"/></a>
                     </li>
                 </ul>
             </nav>

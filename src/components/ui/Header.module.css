@@ -62,6 +62,11 @@ li.icons img {
   display: none;
 }
 
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 786px) {
   .closeMenu,

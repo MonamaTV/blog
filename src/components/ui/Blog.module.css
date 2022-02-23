@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 }
 
-.blog > div {
+.blog > a {
   flex: 45%;
 }
 .click {

@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Head>
           <title>Home of Monama TV - Software Developer, Blogger, YouTuber</title>
-          <meta name="color" content="#171a33" />
+          <meta name="theme-color" content="#171a33" />
           <meta name="keywords" content="Software Developer, Blogger, YouTuber, South African Software Engineer" />
           <meta name="description" content="Software Developer, Blogger, YouTuber, South African Software Engineer" />
       </Head>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const Meta = ({title, image, description, tags = []}) => {
+const Meta = ({title, image = null, description, tags = []}) => {
     return (
         <Head>
             <meta charset="utf-8" />
@@ -19,8 +19,8 @@ const Meta = ({title, image, description, tags = []}) => {
             <meta property="og:type" content="website" />
             {/* Twitter Tags */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Home of Monama TV - Software Developer, Blogger, YouTuber" />
-            <meta name="twitter:description" content="Software Developer, Blogger, YouTuber, South African Software Engineer" />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content=""></meta>
         </Head>
     );

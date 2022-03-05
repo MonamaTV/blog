@@ -1,8 +1,13 @@
 import Image from "next/image";
+import Meta from "../../src/components/utils/Meta";
 const Blog = () => {
 
     return (
-        <>
+        <>  
+            <Meta
+                title="Improve Your Productivity When Coding"
+                description={"Improve Your Productivity When Coding"}
+            />
             <div className="blog-container">
                 <div className="blog-header">
                     {/* The title of the article and the author */}
@@ -10,7 +15,7 @@ const Blog = () => {
                     <small>Written by Monama Tadima</small>
                 </div>
                 <div className="content-image">
-                    <Image width={"1000"} height={"440"} src="/server.png" />
+                    <Image width={"1000"} height={"440"} src="/display.jpg" />
                 </div>
                 <div className="content-blog">
                     <h2>Awareness</h2>

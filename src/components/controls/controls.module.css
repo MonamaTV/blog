@@ -7,7 +7,18 @@
   align-items: flex-start;
   color: rgb(0, 0, 0);
 }
-
+.content:hover {
+  text-decoration: underline;
+  animation: underlining 200ms ease-in-out;
+}
+@keyframes underlining {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 .img img {
   width: 140px;
   object-fit: cover;

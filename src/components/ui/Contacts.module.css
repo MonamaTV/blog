@@ -8,6 +8,10 @@
   margin: 5px 0;
 }
 .input__group input,
+.input__group textarea {
+  background-color: #fff;
+}
+.input__group input,
 .input__group textarea,
 .input__group button {
   border: 1px solid #86888a;

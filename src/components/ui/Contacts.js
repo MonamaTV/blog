@@ -16,7 +16,7 @@ const Contacts = () => {
                     <p>Mabitsi</p>
                     </address>
                     <br /> 
-                    <a href="mailto:">keletsovincent92@gmail.com</a> 
+                    <a href="mailto:keletsovincent92@gmail.com">keletsovincent92@gmail.com</a> 
                 </div>
                 <div className={styles.media}>
                     <a href=""><img src="./git.png" /></a>

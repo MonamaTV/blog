@@ -73,6 +73,13 @@ li.icons img {
   .menu {
     display: block;
   }
+  .icons {
+    background-color: #171a33;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    align-items: center;
+  }
   .navigation {
     position: absolute;
     top: 0;

@@ -11,8 +11,8 @@ const Blog = () => {
             <div className="blog-container">
                 <div className="blog-header">
                     {/* The title of the article and the author */}
-                    <h1>Improve Your Productivity When Coding</h1>
                     <small>By Monama Tadima</small>
+                    <h1>Improve Your Productivity When Coding</h1>
                 </div>
                 <div className="content-image">
                     <Image width={"1000"} height={"440"} src="/display.jpg" />

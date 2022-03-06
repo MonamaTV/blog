@@ -7,7 +7,19 @@ const Blogs = () => {
     return (
         <>
             <Head>
-
+                <title>Home of My Blog. Enjoy the blogs</title>
+                <meta name="theme-color" content="#171a33" />
+                <meta name="keywords" content="Software Developer, Blogger, YouTuber, South African Software Engineer" />
+                <meta name="description" content="I am a South African developer who enjoys typing some weird coloful text on my computer. " />
+                <meta property="og:image" content="https://a.storyblok.com/f/147977/500x500/09296ef791/cover-image.png" />
+                <meta property="og:title" content="Home of Monama TV - Software Developer, Blogger, YouTuber" />
+                <meta property="og:site_name" content={"TadV"} />
+                <meta property="og:type" content="website" />
+                {/* Twitter Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Home of Monama TV - Software Developer, Blogger, YouTuber" />
+                <meta name="twitter:description" content="Software Developer, Blogger, YouTuber, South African Software Engineer" />
+                <meta name="twitter:image" content="https://a.storyblok.com/f/147977/500x500/09296ef791/cover-image.png" />
             </Head>
             <div className="container ml-5">
                 <div className="search-blogs">

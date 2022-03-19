@@ -180,6 +180,19 @@ body {
   border-radius: 5px;
 }
 
+/* The social buttons */
+.socials p {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.socials a img {
+  display: inline;
+  margin: 0 3px;
+  width: 17px;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     height: auto;
@@ -218,7 +231,7 @@ body {
 }
 
 .blog-header h1 {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   font-size: 3em;
 }
 .blog-header small {

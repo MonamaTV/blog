@@ -5,6 +5,7 @@ const BlogContent = () => {
     return (
         <Link href="/blog/something" >
             <a className={styles.content}>
+                
                 <div className={styles.img}>
                     <img src="./react.png" alt="" />
                 </div>

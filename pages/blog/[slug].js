@@ -22,7 +22,7 @@ const Blog = () => {
 
 
     return (
-        true ? <Loading /> :
+        !true ? <Loading /> :
         <>  
             <Meta
                 title="Improve Your Productivity When Coding"

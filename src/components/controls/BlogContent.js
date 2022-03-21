@@ -2,8 +2,9 @@ import styles from './controls.module.css';
 import Link from 'next/link';
 
 
-const BlogContent = () => {
+const BlogContent = ({post}) => {
 
+    console.log(post);
     
     return (
         <Link href="/blog/something" >

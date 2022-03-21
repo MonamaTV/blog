@@ -3,26 +3,13 @@ import Meta from "../../src/components/utils/Meta";
 import { useState, useEffect } from 'react';
 import { marked } from "marked";
 import Loading from "../../src/components/ui/Loading";
-const Blog = () => {
+import useAxios from "../../src/axios/axios";
 
-    const [blogs, setBlogs] = useState({});
+export default function Blog({posts}){
 
-
-    const fetchData = async () => {
-        const response = await fetch("https://api.storyblok.com/v2/cdn/stories/blog/how-to-get-away-with-murder?version=draft&token=02qsmk4aZw5wQ80l47fOGwtt&cv=1647774940");
-        const data = await response.json();
-        console.log(data);
-        setBlogs(data?.story?.content);
-        console.log(marked(data?.story?.content.body))
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
-
+    console.log({posts});
     return (
-        !true ? <Loading /> :
+        true ? <Loading /> :
         <>  
             <Meta
                 title="Improve Your Productivity When Coding"
@@ -30,11 +17,12 @@ const Blog = () => {
             />
             <div className="blog-container">
                 <div className="blog-header">
-                    {/* The title of the article and the author */}
+                    {/* The title of the article */}
                     
                     <h1>Improve Your Productivity When Coding</h1>
                 </div>
                 <div className="content-image">
+                    {/* Image */}
                     <Image width={"1000"} height={"440"} src={blogs?.thumbnail?.filename || "/developer.png"} />
                 </div>
                 <div className="content-blog">
@@ -44,7 +32,9 @@ const Blog = () => {
                         <a href="#"><img src="/dm.png" alt="" /></a></p>
                     </div>
 
+                    {/* Date published */}
                     
+                    {/* Content */}
                    
                    
                    
@@ -66,6 +56,41 @@ const Blog = () => {
             </div>
         </>
     );
-}
+};
 
-export default Blog;
+
+export async function getStaticPaths() {
+
+    const data = await useAxios().get("https://api.storyblok.com/v2/cdn/stories/",{ 
+        params: {
+            token: process.env.API_KEY,
+            version: "draft",
+            cv: 1647878475
+        }
+    });
+
+    return {
+      paths: [
+        { params: { slug: "something"} }
+      ],
+      fallback: false
+    };
+  }
+
+
+export async function getStaticProps() {
+
+    const { data } = await useAxios().get("https://api.storyblok.com/v2/cdn/stories/",{ 
+        params: {
+            token: process.env.API_KEY,
+            version: "draft",
+            cv: 1647878475
+        }
+    });
+
+    return {
+      props: {
+        posts: data.stories || []
+      }, // will be passed to the page component as props
+    }
+}

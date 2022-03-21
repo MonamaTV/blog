@@ -2,7 +2,10 @@ import BlogContent from "../../src/components/controls/BlogContent";
 import Button from "../../src/components/controls/Button";
 import TextField from "../../src/components/controls/TextField";
 import Head from "next/head";
-const Blogs = () => {
+import useAxios from "../../src/axios/axios";
+import BlogsUI from "../../src/components/ui/Blogs";
+
+const Blogs = ({posts}) => {
 
     return (
         <>
@@ -28,12 +31,7 @@ const Blogs = () => {
                 </div>
                     <h2 className="enjoy">Enjoy the blogs</h2>
                 <div className="blog">
-                    <BlogContent />
-                    <BlogContent />
-                    <BlogContent />
-                    <BlogContent />
-                    <BlogContent />
-                    <BlogContent />
+                    <BlogsUI posts={posts} />
                 </div>
                 <div className="blog-action">
                     <Button styles={"next-button"} text="Prev" />
@@ -43,6 +41,25 @@ const Blogs = () => {
         </>
 
     )
+}
+
+
+
+export async function getStaticProps() {
+
+    const { data } = await useAxios().get("https://api.storyblok.com/v2/cdn/stories/",{ 
+        params: {
+            token: process.env.API_KEY,
+            version: "draft",
+            cv: 1647878475
+        }
+    });
+
+    return {
+      props: {
+        posts: data.stories || []
+      }, // will be passed to the page component as props
+    }
 }
 
 export default Blogs;

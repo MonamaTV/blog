@@ -1,0 +1,28 @@
+.not_found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.not_found_links {
+}
+.not_found_links a {
+  margin: 10px 5px;
+  padding: 10px;
+  display: inline-block;
+  color: #fff;
+  background-color: #007d59;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.not_found_links > a {
+  background-color: #171a33;
+}
+
+@media only screen and (min-width: 800px) {
+  .not_found {
+    margin-top: 80px;
+  }
+}

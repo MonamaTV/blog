@@ -13,7 +13,7 @@ const About = () => {
                 </div>
                 <div className={styles.aboutContent}>
                     <h2>Small Piece About Me</h2>
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design</p>
+                    <p>My motivation in software development has led me to become a solution-driven person who always thrives to solve problems with the best possible methodologies. I mostly experience growth in spaces where I get challenged to do tasks that are out of my 'comfort-zone'. Also, environments that allow collaborative efforts tend to be my favorites because you learn a lot more from working with people with different experiences and skillsets. </p>  
                     <div className={styles.links}>
                         <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/vincent-monama-b5705b18b/" className={styles.linkedin}>Check My LinkedIn</a>
                         <a className={styles.contactLink} href="#contacts">Contact</a>

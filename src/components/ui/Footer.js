@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
             <div className={styles.foot}>
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/blog">Blog</a></li>
+                    <li><Link href="/blog"><a>Blog</a></Link></li>
                     <li><a href="">About</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>

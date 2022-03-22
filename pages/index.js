@@ -1,9 +1,10 @@
 import Head from 'next/head'
+import { getPosts } from '../lib/api'
 import About from '../src/components/ui/About'
 import Blog from '../src/components/ui/Blog'
 import Contacts from '../src/components/ui/Contacts'
 
-export default function Home() {
+export default function Home({posts}) {
   return (
     <>
       <Head>
@@ -22,8 +23,19 @@ export default function Home() {
           <meta name="twitter:image" content="https://a.storyblok.com/f/147977/500x500/09296ef791/cover-image.png" />
       </Head>
       <About />
-      {/* <Blog /> */}
+      <Blog posts={posts} />
       <Contacts />
     </>
   )
+}
+
+export async function getStaticProps() {
+
+  const data = await getPosts(4, 1);
+
+  return {
+    props: {
+      posts:  data.stories || []
+    }
+  }
 }

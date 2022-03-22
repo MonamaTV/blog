@@ -4,6 +4,7 @@ import TextField from "../../src/components/controls/TextField";
 import Head from "next/head";
 import axios from "../../src/axios/axios";
 import BlogsUI from "../../src/components/ui/Blogs";
+import { getPosts } from "../../lib/api";
 
 const Blogs = ({posts}) => {
 
@@ -47,18 +48,12 @@ const Blogs = ({posts}) => {
 
 export async function getStaticProps() {
 
-    const { data } = await axios.get("/" ,{ 
-        params: {
-            token: process.env.API_KEY,
-            version: "draft",
-            cv: 1647878475
-        }
-    });
+    const data = await getPosts();
 
     return {
       props: {
         posts:  data.stories || []
-      }, // will be passed to the page component as props
+      }
     }
 }
 

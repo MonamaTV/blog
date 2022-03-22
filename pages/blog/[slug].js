@@ -5,6 +5,7 @@ import { marked } from "marked";
 import Loading from "../../src/components/ui/Loading";
 import axios from "../../src/axios/axios";
 import Content from "../../src/components/ui/Content";
+import { getPost, getPosts } from "../../lib/api";
 
 export default function Blog({post}){
 
@@ -64,14 +65,7 @@ export default function Blog({post}){
 
 export async function getStaticPaths() {
 
-    const {data } = await axios.get("/",{ 
-        params: {
-            token: process.env.API_KEY,
-            version: "draft",
-            cv: 1647878475
-        }
-    });
-
+    const data = await getPosts();
 
     const paths = data.stories.map(story => {
         return `/blog/${story.slug}` 
@@ -86,19 +80,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
 
-    const { data: story } = await axios.get(`/blog/${params.slug}`,{ 
-        params: {
-            token: process.env.API_KEY,
-            version: "draft",
-            cv: 1647878475
-        }
-    });
-
+    const data = await getPost(params.slug);
     
 
     return {
       props: {
-        post: story || {}
+        post: data || {}
       }, // will be passed to the page component as props
     }
 }

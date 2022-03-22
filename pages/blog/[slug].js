@@ -3,27 +3,40 @@ import Meta from "../../src/components/utils/Meta";
 import { useState, useEffect } from 'react';
 import { marked } from "marked";
 import Loading from "../../src/components/ui/Loading";
-import useAxios from "../../src/axios/axios";
+import axios from "../../src/axios/axios";
+import Content from "../../src/components/ui/Content";
 
-export default function Blog({posts}){
+export default function Blog({post}){
 
-    console.log({posts});
+    const {
+        story:{
+            name,
+            content: {
+                body,
+                description,
+                thumbnail: {
+                    filename
+                }
+            } 
+        }
+    } = post;
     return (
-        true ? <Loading /> :
+        !post ? <Loading /> :
         <>  
             <Meta
-                title="Improve Your Productivity When Coding"
-                description={"Improve Your Productivity When Coding"}
+                title={name}
+                description={description}
+                image={filename}
             />
             <div className="blog-container">
                 <div className="blog-header">
                     {/* The title of the article */}
                     
-                    <h1>Improve Your Productivity When Coding</h1>
+                    <h1>{name}</h1>
                 </div>
                 <div className="content-image">
                     {/* Image */}
-                    <Image width={"1000"} height={"440"} src={blogs?.thumbnail?.filename || "/developer.png"} />
+                    <Image width={"1000"} height={"440"} src={filename || "/developer.png"} />
                 </div>
                 <div className="content-blog">
                     <div className="socials">
@@ -37,20 +50,10 @@ export default function Blog({posts}){
                     {/* Content */}
                    
                    
+                   <Content body={body} />
                    
-                   
-                    {/* <small>27 March 2022</small>
+                    {/* <small>27 March 2022</small> */}
 
-                    <h2>Awareness</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel assumenda qui minima corporis eligendi iste quis obcaecati. Aperiam, quod. Atque consequuntur tempore esse itaque obcaecati, vero ratione dolore, amet laborum fuga natus. Dignissimos consequuntur iure, beatae nobis, voluptatum saepe praesentium error, asperiores voluptates nam sed! Eaque atque soluta perferendis ab.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel assumenda qui minima corporis eligendi iste quis obcaecati. Aperiam, quod. Atque consequuntur tempore esse itaque obcaecati, vero ratione dolore, amet laborum fuga natus. Dignissimos consequuntur iure, beatae nobis, voluptatum saepe praesentium error, asperiores voluptates nam sed! Eaque atque soluta perferendis ab.</p>
-                    <h2>Awareness</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel assumenda qui minima corporis eligendi iste quis obcaecati. Aperiam, quod. Atque consequuntur tempore esse itaque obcaecati, vero ratione dolore, amet laborum fuga natus. Dignissimos consequuntur iure, beatae nobis, voluptatum saepe praesentium error, asperiores voluptates nam sed! Eaque atque soluta perferendis ab.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel assumenda qui minima corporis eligendi iste quis obcaecati. Aperiam, quod. Atque consequuntur tempore esse itaque obcaecati, vero ratione dolore, amet laborum fuga natus. Dignissimos consequuntur iure, beatae nobis, voluptatum saepe praesentium error, asperiores voluptates nam sed! Eaque atque soluta perferendis ab.</p>
-                    <h2>Awareness</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel assumenda qui minima corporis eligendi iste quis obcaecati. Aperiam, quod. Atque consequuntur tempore esse itaque obcaecati, vero ratione dolore, amet laborum fuga natus. Dignissimos consequuntur iure, beatae nobis, voluptatum saepe praesentium error, asperiores voluptates nam sed! Eaque atque soluta perferendis ab.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel assumenda qui minima corporis eligendi iste quis obcaecati. Aperiam, quod. Atque consequuntur tempore esse itaque obcaecati, vero ratione dolore, amet laborum fuga natus. Dignissimos consequuntur iure, beatae nobis, voluptatum saepe praesentium error, asperiores voluptates nam sed! Eaque atque soluta perferendis ab.</p>
-                    <h2>Awareness</h2> */}
 
                 </div>
             </div>
@@ -61,7 +64,7 @@ export default function Blog({posts}){
 
 export async function getStaticPaths() {
 
-    const data = await useAxios().get("https://api.storyblok.com/v2/cdn/stories/",{ 
+    const {data } = await axios.get("/",{ 
         params: {
             token: process.env.API_KEY,
             version: "draft",
@@ -69,18 +72,21 @@ export async function getStaticPaths() {
         }
     });
 
+
+    const paths = data.stories.map(story => {
+        return `/blog/${story.slug}` 
+    })
+
     return {
-      paths: [
-        { params: { slug: "something"} }
-      ],
+      paths,
       fallback: false
     };
   }
 
 
-export async function getStaticProps() {
+export async function getStaticProps({params}) {
 
-    const { data } = await useAxios().get("https://api.storyblok.com/v2/cdn/stories/",{ 
+    const { data: story } = await axios.get(`/blog/${params.slug}`,{ 
         params: {
             token: process.env.API_KEY,
             version: "draft",
@@ -88,9 +94,11 @@ export async function getStaticProps() {
         }
     });
 
+    
+
     return {
       props: {
-        posts: data.stories || []
+        post: story || {}
       }, // will be passed to the page component as props
     }
 }

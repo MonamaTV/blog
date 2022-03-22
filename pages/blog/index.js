@@ -2,7 +2,7 @@ import BlogContent from "../../src/components/controls/BlogContent";
 import Button from "../../src/components/controls/Button";
 import TextField from "../../src/components/controls/TextField";
 import Head from "next/head";
-import useAxios from "../../src/axios/axios";
+import axios from "../../src/axios/axios";
 import BlogsUI from "../../src/components/ui/Blogs";
 
 const Blogs = ({posts}) => {
@@ -47,7 +47,7 @@ const Blogs = ({posts}) => {
 
 export async function getStaticProps() {
 
-    const { data } = await useAxios().get("https://api.storyblok.com/v2/cdn/stories/",{ 
+    const { data } = await axios.get("/" ,{ 
         params: {
             token: process.env.API_KEY,
             version: "draft",
@@ -57,7 +57,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        posts: data.stories || []
+        posts:  data.stories || []
       }, // will be passed to the page component as props
     }
 }

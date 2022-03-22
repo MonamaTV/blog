@@ -22,7 +22,7 @@ export default function Home() {
           <meta name="twitter:image" content="https://a.storyblok.com/f/147977/500x500/09296ef791/cover-image.png" />
       </Head>
       <About />
-      <Blog />
+      {/* <Blog /> */}
       <Contacts />
     </>
   )

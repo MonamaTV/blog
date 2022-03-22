@@ -15,7 +15,7 @@ const BlogContent = ({post}) => {
         <Link href={`/blog/${slug}`} >
             <a className={styles.content}>
                 <div className={styles.img}>
-                    <img src={filename || "./react.png"} alt="" />
+                    <img src={filename || "./react.png"} alt={description} />
                 </div>
                 <div className={styles.blog__title}>
                     <h2>{name}</h2>

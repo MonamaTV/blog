@@ -37,13 +37,13 @@ export default function Blog({post}){
                 </div>
                 <div className="content-image">
                     {/* Image */}
-                    <Image width={"1000"} height={"440"} src={filename || "/developer.png"} />
+                    <Image width={"1000"} height={"440"} src={filename || "/developer.png"} alt={description}/>
                 </div>
                 <div className="content-blog">
                     <div className="socials">
-                        <p><a href="#"> <img src="/face.png" alt="" /></a>
-                        <a href="#"><img src="/twitter.png" alt="" /></a>
-                        <a href="#"><img src="/dm.png" alt="" /></a></p>
+                        <p><a href="#"> <img src="/face.png" alt="Facebook Icon" /></a>
+                        <a href="#"><img src="/twitter.png" alt="Twitter Icon" /></a>
+                        <a href="#"><img src="/dm.png" alt="WhatsApp Icon" /></a></p>
                     </div>
 
                     {/* Date published */}

@@ -22,14 +22,14 @@ const Header = () => {
                 className={styles.menu}
                 onClick={clickMenu}
             >
-                <img src="./menu.png" />
+                <img src="/menu.png" />
             </button>
             
             <nav className={`${styles.navigation} ${ isMenuOpen ? " " : styles.hides}`}>
                 <button 
                     className={styles.closeMenu}
                     onClick={clickMenu}
-                ><img src="./closing.png" />
+                ><img src="/closing.png" />
                 </button>
                 <ul className={styles.nav}>
                     <li><a href="#about">About</a></li>
@@ -39,9 +39,9 @@ const Header = () => {
                     </Link></li>
                     <li><a href="#contacts">Contacts</a></li>
                     <li className={styles.icons}>
-                        <a rel="noreferrer" target="_blank" href="https://github.com/MonamaTV"><img src="./hub.png"/></a>
-                        <a rel="noreferrer" target="_blank" href="https://www.youtube.com/channel/UCTVZlugMB9J90GIOzVJzu6A"><img src="./tube.png"/></a>
-                        <a rel="noreferrer" target="_blank" href="https://twitter.com/Monama_Vee"><img src="./twitter.png"/></a>
+                        <a rel="noreferrer" target="_blank" href="https://github.com/MonamaTV"><img src="/hub.png"/></a>
+                        <a rel="noreferrer" target="_blank" href="https://www.youtube.com/channel/UCTVZlugMB9J90GIOzVJzu6A"><img src="/tube.png"/></a>
+                        <a rel="noreferrer" target="_blank" href="https://twitter.com/Monama_Vee"><img src="/twitter.png"/></a>
                     </li>
                 </ul>
             </nav>

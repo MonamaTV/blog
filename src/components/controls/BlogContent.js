@@ -4,8 +4,6 @@ import Link from 'next/link';
 
 const BlogContent = ({post}) => {
 
-    console.log(post);
-
     const { name, slug, content: {
         description,
         thumbnail: {

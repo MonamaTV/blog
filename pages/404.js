@@ -5,7 +5,7 @@ const CustomNotFound = () => {
 
     return (
         <div className={styles.not_found}>
-            <div className="not-found-image">
+            <div className={styles.not_found_image}>
                 <Image  width={"1000"} height={"440"} src="/notfound.svg" />
             </div>
             <div className="not-found-content">

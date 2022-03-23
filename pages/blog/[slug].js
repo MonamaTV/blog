@@ -25,7 +25,7 @@ export default function Blog({post}){
         !post ? <Loading /> :
         <>  
             <Meta
-                title={name}
+                title={name + " - TadV Blog"}
                 description={description}
                 image={filename}
             />

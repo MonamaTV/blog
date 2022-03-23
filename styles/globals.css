@@ -249,8 +249,32 @@ body {
 .content-blog h2 {
   font-size: 2em;
 }
+.content-blog h3 {
+  font-size: 1.5em;
+}
+
+.content-blog a {
+  color: inherit;
+  /* text-decoration: none; */
+}
 
 .content-blog > * {
+  margin: 10px 0;
+}
+.content-blog p {
+  font-size: 19px;
+}
+
+.content-blog ul {
+  padding-left: 40px;
+}
+.content-blog a,
+.content-blog p,
+.content-blog h2,
+.content-blog small,
+.content-blog img,
+.content-blog ul,
+.content-blog ol {
   margin: 10px 0;
 }
 
@@ -258,6 +282,7 @@ body {
   object-fit: cover;
   display: block;
   object-position: center;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -307,4 +332,14 @@ body {
   .content-blog h2 {
     font-size: 1.5em;
   }
+}
+
+/* The content ui */
+
+.content_ui img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 15px 0;
+  /* height: 0px; */
 }

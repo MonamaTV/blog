@@ -25,4 +25,8 @@
   .not_found {
     margin-top: 80px;
   }
+
+  .not_found_image img {
+    width: 70%;
+  }
 }
